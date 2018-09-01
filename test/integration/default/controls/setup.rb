@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#XXX delete this file
+
 # rubocop:disable LineLength
 state_file = 'terraform.tfstate.d/kitchen-terraform-default-aws/terraform.tfstate'
 tf_state = JSON.parse(File.open(state_file).read)

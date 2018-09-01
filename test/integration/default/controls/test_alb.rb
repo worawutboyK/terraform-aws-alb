@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#XXX delete this file
+
 require 'awspec'
 require_relative 'setup'
 

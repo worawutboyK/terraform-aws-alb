@@ -63,17 +63,14 @@ Balancer (ALB) running over HTTP/HTTPS. Available through the [Terraform registr
 
 * ## Testing
 
-* This module has been packaged with [awspec](https://github.com/k1LoW/awspec) tests through [kitchen](https://kitchen.ci/) and [kitchen-terraform](https://newcontext-oss.github.io/kitchen-terraform/). To run them:
+* This module has been packaged with [awspec](https://github.com/k1LoW/awspec) tests through [kitchen](https://kitchen.ci/), [kitchen-terraform](https://newcontext-oss.github.io/kitchen-terraform/), and Docker. To run them:
 
-* 1. Install [rvm](https://rvm.io/rvm/install) and the ruby version specified in the [Gemfile](https://github.com/terraform-aws-modules/terraform-aws-alb/tree/master/Gemfile).
-* 2. Install bundler and the gems from our Gemfile:
-*
+* 1. Install Docker and start the daemon. Ensure your AWS credentials are populated in your current shell session.
+* 2. Build the container:
 *     ```bash
-*     gem install bundler && bundle install
+*     docker build . --build-arg
 *     ```
 *
-* 3. Ensure your AWS environment is configured (i.e. credentials and region) for test and set TF_VAR_region to a valid AWS region (e.g. `export TF_VAR_region=${AWS_REGION}`).
-* 4. Test using `bundle exec kitchen test` from the root of the repo.
 
 * ## Doc generation
 

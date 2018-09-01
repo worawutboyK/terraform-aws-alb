@@ -1,15 +1,13 @@
 terraform {
-  required_version = "= 0.11.7"
+  required_version = "= 0.11.8"
 }
 
 provider "aws" {
-  version = ">= 1.17.0"
+  version = ">= 1.34.0"
   region  = "${var.region}"
 }
 
-provider "random" {
-  version = "= 1.1.0"
-}
+provider "random" {}
 
 resource "random_string" "suffix" {
   length  = 8
@@ -24,8 +22,6 @@ resource "aws_iam_server_certificate" "fixture_cert" {
   lifecycle {
     create_before_destroy = true
   }
-
-  count = 4
 }
 
 resource "aws_s3_bucket" "log_bucket" {
